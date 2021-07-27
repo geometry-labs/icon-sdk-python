@@ -61,6 +61,9 @@ class HTTPProvider(Provider):
         :param full_path_url: full path URL as like <scheme>://<host>:<port>/api/v3
         :param request_kwargs: kwargs for setting to head of request
         """
+        if not full_path_url.startswith('http'):
+            full_path_url = 'http://' + full_path_url
+
         uri = urlparse(full_path_url)
         self._serverUri = f'{uri.scheme}://{uri.netloc}'
         self._channel = self._get_channel(uri.path)

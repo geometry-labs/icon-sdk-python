@@ -61,7 +61,10 @@ class TestHTTPProvider(TestSendSuper):
         valid_urls = [
             "http://localhost:9000/api/v3",
             "https://ctz.solidwallet.io/api/v3",
-            "http://localhost:9000/api/v3/channel"
+            "http://localhost:9000/api/v3/channel",
+            "localhost/api/v3",
+            "localhost:9000/api/v3",
+            "service.consul/api/v3",
         ]
         for url in valid_urls:
             try:
